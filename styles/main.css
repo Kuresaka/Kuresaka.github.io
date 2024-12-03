@@ -263,3 +263,39 @@ div.video-container > iframe {
   width: 100%;
   aspect-ratio: 16/9;
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+/* Firefox */
+::-moz-scrollbar {
+  width: 5px;
+}
+::-moz-scrollbar-track {
+  background: #f1f1f1;
+}
+::-moz-scrollbar-thumb {
+  background: #555;
+}
+/* IE and Edge */
+::-ms-scrollbar {
+  width: 5px;
+}
+::-ms-scrollbar-track {
+  background: #f1f1f1;
+}
+::-ms-scrollbar-thumb {
+  background: #555;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #f1f1f1;
+}
