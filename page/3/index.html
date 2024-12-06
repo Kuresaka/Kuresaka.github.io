@@ -30,6 +30,8 @@
 
 
 
+<meta name="robots" content="noindex, nofollow, noarchive">
+
 <title>KØKU - conceptual vøid</title>
 
 <style>
@@ -76,10 +78,17 @@
     </nav>
 </header>
 
-        <main>
+        <script>
+    function confirmAndRedirect(url) {
+        if (confirm("要去往遥远的荒原吗？")) {
+            window.location.href = url;
+        }
+    }
+</script>
+<main>
     
     <img src="/cover.gif" 
-    title=""/>
+    title="" alt="Click Me" onclick="confirmAndRedirect('/');"/>
     
     <p>
         <b style="font-size: 36px; font-family: Times New Roman; color:hsl(0, 0%, 25%); " >
