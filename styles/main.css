@@ -299,3 +299,7 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #555 #f1f1f1;
 }
+::selection {
+  color: #ae0404;
+  background: #d9d9d9;
+}
