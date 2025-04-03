@@ -199,6 +199,17 @@ main header div {
   color: #afa09d;
   font-size: 14px;
 }
+.text-hover {
+  position: relative;
+  display: inline-block; /* 或者根据需要设置为其他类型 */
+}
+.blurred {
+  opacity: 0.1; /* 初始模糊效果，透明度设置为0.5 */
+  transition: opacity 0.2s ease; /* 过渡效果 */
+}
+.text-hover:hover .blurred {
+  opacity: 1; /* 鼠标悬停时，透明度变为1，显示清晰文字 */
+}
 main header div > * {
   margin: 0.1rem 0;
 }
