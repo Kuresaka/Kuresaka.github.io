@@ -210,6 +210,14 @@ main header div {
 .text-hover:hover .blurred {
   opacity: 1; /* 鼠标悬停时，透明度变为1，显示清晰文字 */
 }
+.hover-image {
+  width: 300px; /* 根据需要调整 */
+  height: auto; /* 保持图片比例 */
+  transition: opacity 1s ease; /* 添加平滑过渡效果 */
+}
+.hover-image:hover {
+  content: url("/images/gift.gif"); /* 鼠标悬停时更换的图片 */
+}
 main header div > * {
   margin: 0.1rem 0;
 }
