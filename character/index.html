@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+
+
+
+
+
+
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400&family=Noto+Serif+SC:wght@400&family=Noto+Serif+TC:wght@400&family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    
+
+<link rel="stylesheet" href="/styles/main.css">
+
+
+    
+<link rel="stylesheet" href="/styles/page.css">
+
+
+
+<meta name="robots" content="noindex, nofollow, noarchive">
+<body oncontextmenu="return false;" onkeypress="return false;" onkeydown="return false;" ondragstart="return false;"></body>
+
+<script>
+        // 禁止右键菜单
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            showAlert('右键菜单已被禁用');
+        });
+ 
+        // 禁止F12开发者工具
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.key === 'F12') {
+                e.preventDefault();
+                showAlert('F12开发者工具已被禁用');
+            }
+            // Ctrl+U
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+                showAlert('Ctrl+U查看源代码已被禁用');
+            }
+            // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.key === 'i') {
+                e.preventDefault();
+                showAlert('Ctrl+Shift+I开发者工具已被禁用');
+            }
+            // Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && e.key === 'c') {
+                e.preventDefault();
+                showAlert('Ctrl+Shift+C元素选择器已被禁用');
+            }
+        });
+ 
+        // 监测开发者工具是否打开（通过监测窗口尺寸变化）
+        let devtoolsOpen = false;
+        let lastInnerWidth = window.innerWidth;
+        let lastInnerHeight = window.innerHeight;
+ 
+        setInterval(function() {
+            if (
+                (window.innerWidth !== lastInnerWidth && Math.abs(window.innerWidth - lastInnerWidth) > 100) ||
+                (window.innerHeight !== lastInnerHeight && Math.abs(window.innerHeight - lastInnerHeight) > 100)
+            ) {
+                devtoolsOpen = true;
+                showAlert('检测到开发者工具已打开');
+                document.body.innerHTML = '<div class="fixed inset-0 bg-dark flex items-center justify-center text-white text-xl font-bold">检测到开发者工具已打开，请关闭后继续访问。</div>';
+            }
+            lastInnerWidth = window.innerWidth;
+            lastInnerHeight = window.innerHeight;
+        }, 1000);
+ 
+        // 测试按钮功能
+        document.getElementById('testButton').addEventListener('click', function() {
+            document.getElementById('testResult').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('testResult').classList.add('hidden');
+            }, 3000);
+        });
+ 
+        // 显示警告提示
+        function showAlert(message) {
+            // 创建提示元素
+            const alertBox = document.createElement('div');
+            alertBox.className = 'fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-md shadow-lg z-50 transform transition-all duration-300 opacity-0 translate-y-[-20px]';
+            alertBox.textContent = message;
+            
+            // 添加到页面
+            document.body.appendChild(alertBox);
+            
+            // 显示动画
+            setTimeout(() => {
+                alertBox.classList.remove('opacity-0', 'translate-y-[-20px]');
+            }, 10);
+            
+            // 3秒后隐藏
+            setTimeout(() => {
+                alertBox.classList.add('opacity-0', 'translate-y-[-20px]');
+                setTimeout(() => {
+                    document.body.removeChild(alertBox);
+                }, 300);
+            }, 2000);
+        }
+    </script>
+
+<title>关于角色 - KØKU - conceptual vøid</title>
+<style>
+    body {
+      background-image: url('/images/background.gif');
+      background-size: 100% 100%;
+      background-attachment: fixed;
+    }
+  </style>
+    <meta name="generator" content="Hexo 7.1.1"></head>
+    <body>
+        <header>
+    <nav>
+        <ul>
+            <li><a href="/"><div class="hover-text">木屋</div></a></li>
+            
+                
+                    <li>
+                        <a href="/dreams"
+                            ><span><div class="hover-text">梦中梦</div></span></a
+                        >
+                    </li>
+                
+                    <li>
+                        <a href="/earth"
+                            ><span><div class="hover-text">虚构史</div></span></a
+                        >
+                    </li>
+                
+                    <li>
+                        <a href="/sandbox"
+                            ><span><div class="hover-text">沙盘游戏</div></span></a
+                        >
+                    </li>
+                
+                    <li>
+                        <a href="/gallery"
+                            ><span><div class="hover-text">伪博物馆</div></span></a
+                        >
+                    </li>
+                
+            
+        </ul>
+    </nav>
+</header>
+
+        <main>
+    <header>
+        <h1>
+            
+                关于角色
+            
+        </h1>
+        <h4>
+        </h4>
+    </header>
+    <p style="font-size:14px; color: grey;">「定义的延伸」</p>
+
+<hr>
+<p>实际上，这种说法最初共鸣自米兰·昆德拉文章中阐述的观点。<br>在摄入信息、处理内化的过程中，这些角色与<em>我</em>之间唯一存在的联系是，其起点起始于我。TA们是对某一时刻脑内想法的再现与延展，然而当其履历轨迹趋于完整时，这些痕迹已与仅在<em>旁观着</em>的我无关。笔者所做的仅是记录，同时享受编织串联角色关系网的秩序感。</p>
+<p>时至今日，我仍在思考是否需要对角色定义进行主动说明，逐渐已对“解释行为”被施加的含义感到疲惫。然而对于到访此处的游览者，适量的引导或许是必要的。</p>
+<p>请注意，本站所记叙内容遵循以下原则：</p>
+<ol>
+<li>皆为<a target="_blank" rel="noopener" href="https://lgbtqia.wiki/wiki/Cassgender">cassgender</a>角色，外貌＝<em>人</em>的形状。当使用“他”为第三人称时，对应英文语境中的“they&#x2F;them”；</li>
+<li>即使出现可能的社会关系，各角色间也均无任何浪漫关系，请将其全部理解为<a target="_blank" rel="noopener" href="https://lgbtqia.wiki/wiki/Aroace">AroAce</a>；</li>
+<li>概念与角色互为载体，内容不局限于文字，倾向于多媒介并存，因此网站本身也是一个<em>地点</em>。</li>
+</ol>
+<p><br><br><br></p>
+<blockquote>
+就像我曾说过的，小说人物不像生物那样诞生自母体，而是产生于一种情境，一个语句，一个隐喻。隐喻中包含了一种处于萌芽状态的人生的基本可能性，在作家的想象中，它只是还未被发现，或人们还未论及它的实质。<br>
+然而，小说人物并非产生于我的履历表中的任何一种情景。我小说中的主人公是我自己未曾实现的可能性。我爱所有的主人公，并且所有主人公都令我同样地恐惧，原因就在于此。他们，这些人物或那些人物，跨越了界限，而我只是绕了过去。这条被跨越的界限（我的“我”终结于界限的那一边）吸引着我。小说要探寻的奥秘仅在另外一边开始。小说不是作家的忏悔，而是对于陷入尘世陷阱的人生的探索。<br>
+<p style="text-align: right; font-size: 12px; ">《不能承受的生命之轻》 [捷克]米兰·昆德拉</p>
+</blockquote>
+
+<hr>
+
+</main>
+
+        
+
+        <footer>
+    <p>&copy;2024 Kuresaka<br>
+        无特殊注明，本站内容均为虚构，推荐使用PC端访问
+    </p>
+</footer>
+
+    </body>
+</html>

@@ -31,9 +31,91 @@
 
 
 <meta name="robots" content="noindex, nofollow, noarchive">
-<body oncontextmenu="return false;" onkeypress="return false;" onkeydown="return false;"></body>
-<title>深林中 - KØKU - conceptual vøid</title>
+<body oncontextmenu="return false;" onkeypress="return false;" onkeydown="return false;" ondragstart="return false;"></body>
 
+<script>
+        // 禁止右键菜单
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            showAlert('右键菜单已被禁用');
+        });
+ 
+        // 禁止F12开发者工具
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.key === 'F12') {
+                e.preventDefault();
+                showAlert('F12开发者工具已被禁用');
+            }
+            // Ctrl+U
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+                showAlert('Ctrl+U查看源代码已被禁用');
+            }
+            // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.key === 'i') {
+                e.preventDefault();
+                showAlert('Ctrl+Shift+I开发者工具已被禁用');
+            }
+            // Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && e.key === 'c') {
+                e.preventDefault();
+                showAlert('Ctrl+Shift+C元素选择器已被禁用');
+            }
+        });
+ 
+        // 监测开发者工具是否打开（通过监测窗口尺寸变化）
+        let devtoolsOpen = false;
+        let lastInnerWidth = window.innerWidth;
+        let lastInnerHeight = window.innerHeight;
+ 
+        setInterval(function() {
+            if (
+                (window.innerWidth !== lastInnerWidth && Math.abs(window.innerWidth - lastInnerWidth) > 100) ||
+                (window.innerHeight !== lastInnerHeight && Math.abs(window.innerHeight - lastInnerHeight) > 100)
+            ) {
+                devtoolsOpen = true;
+                showAlert('检测到开发者工具已打开');
+                document.body.innerHTML = '<div class="fixed inset-0 bg-dark flex items-center justify-center text-white text-xl font-bold">检测到开发者工具已打开，请关闭后继续访问。</div>';
+            }
+            lastInnerWidth = window.innerWidth;
+            lastInnerHeight = window.innerHeight;
+        }, 1000);
+ 
+        // 测试按钮功能
+        document.getElementById('testButton').addEventListener('click', function() {
+            document.getElementById('testResult').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('testResult').classList.add('hidden');
+            }, 3000);
+        });
+ 
+        // 显示警告提示
+        function showAlert(message) {
+            // 创建提示元素
+            const alertBox = document.createElement('div');
+            alertBox.className = 'fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-md shadow-lg z-50 transform transition-all duration-300 opacity-0 translate-y-[-20px]';
+            alertBox.textContent = message;
+            
+            // 添加到页面
+            document.body.appendChild(alertBox);
+            
+            // 显示动画
+            setTimeout(() => {
+                alertBox.classList.remove('opacity-0', 'translate-y-[-20px]');
+            }, 10);
+            
+            // 3秒后隐藏
+            setTimeout(() => {
+                alertBox.classList.add('opacity-0', 'translate-y-[-20px]');
+                setTimeout(() => {
+                    document.body.removeChild(alertBox);
+                }, 300);
+            }, 2000);
+        }
+    </script>
+
+<title>深林中 - KØKU - conceptual vøid</title>
 <style>
     body {
       background-image: url('/images/background.gif');
@@ -132,10 +214,10 @@
 <p>&emsp;&emsp;空气沉寂了许久，忽然，尤西再度开口。</p>
 <p>&emsp;&emsp;“您瞧，那是什么。”</p>
 <p>&emsp;&emsp;我顺着其手指方向看去，在倾倒的枯树下，地面略微凸起，四周码着一圈三角形石头——那是我埋补给物时会做的标记。</p>
-<p>&emsp;&emsp;我们决定分头行动。尤西独自拖着鹿回了营地，我半蹲下来，一层层扒开冻土——幽邃的墓穴，埋葬一切旧日之物，一个念头莫名萦绕在脑中：我是<em>一座空墓的掘墓人</em>——终于露出生锈的铁盒表面。卡扣已被锈死，我用小刀沿着缝隙撬开。里面整齐码放着几样眼熟的物品：一把工兵铲、几瓶劣质酒精、干粮和糖，还有几本浸水发皱的旧书——在这种地方，您总得有打发时间的玩意儿。毕竟对于一个已经一无所有的人来说，他所剩下的只有大把无处可用的时间。将书拿起的片刻，由扉页飘下一张旧照片，我拾起来，看到背面写着潦草的日期，辨认不出是谁的笔迹。它大约摄于半年前，在我们被炸毁前的旧营地。</p>
+<p>&emsp;&emsp;我们决定分头行动。尤西独自拖着鹿回了营地，我半蹲下来，一层层扒开冻土——幽邃的墓穴，埋葬一切旧日之物，一个念头莫名萦绕在脑中：我是<em>一座空墓的掘墓人</em>——终于露出生锈的铁盒表面。卡扣已被锈死，我用小刀沿着缝隙撬开。里面整齐码放着几样眼熟的物品：一把工兵铲、几瓶劣质酒精、压缩干粮和糖，还有几本浸水发皱的旧书——在这种地方，您总得有打发时间的玩意儿。毕竟对于一个已经一无所有的人来说，他所剩下的只有大把无处可用的时间。将书拿起的片刻，由扉页飘下一张旧照片，我拾起来，看到背面写着潦草的日期，辨认不出是谁的笔迹。它大约摄于半年前，在我们被炸毁前的旧营地。</p>
 <p>&emsp;&emsp;我拂去相纸表层水渍状的灰尘仔细端详这几个人影，由此脑中缄默许久的海马体与神经元再度复苏，断断续续拼凑起那些早已残破不堪的记忆。<br><br><br><br>&emsp;&emsp;照片左起打头的是马特维，负责炊事与后勤。那枚炸弹落在距离堑壕不到二十尺的地方时，他正守着灶上一锅沸腾的热汤。深度烫伤和烧伤大约折磨了他三四天，一天清晨，在高烧与剧痛招致的狂乱边缘，他终于摸到了一支步枪。</p>
 <p>&emsp;&emsp;在他旁边紧挨着的是莱卡——和那条首次进入太空的可怜小狗同名——手持半条旧弹匣，在镜头前面带笑意。入冬后不久，三级冻伤和创口的破伤风感染在夜晚带走了他，我们用多余的帐篷帆布包裹住尸身，绑上石块沉到了几公里开外那个废弃港口的水底。他常和我们讲起西伯利亚边陲的水葬：在海港深层的水中，鱼虾水蚤们能在十几小时内将躯体还原至只剩一副骸骨，那是他所向往的纯净之死。三四周后，冬季寒潮将墓穴入口——最后几十平方米的海面冻结，他如愿在水底沉睡了整个冬季。</p>
-<p>&emsp;&emsp;伊戈尔抿着嘴，患有轻度结膜炎的巩膜红肿如血，远远地站在照片中央偏后的阴影里。他是我们之中年纪最大的人，曾在阿什科市国立大学的电气工程学任职副教授。某晚，因补给品中的劣酒酩酊大醉，他兴致勃勃向众人讲述自己未竟的研究：一部声称足以改写审讯历史的精密机器、一个协助他测试仪器的神秘访客以及一场混乱诡谲、宛如杜撰的未遂谋杀。我们谁都没信，认为那只是酒后胡言，即便其中有不少耐人寻味的细节。轰炸发生前，他离开驻地去镇上的邮局送信，联络从此中断，我再没收到他的消息。</p>
+<p>&emsp;&emsp;伊戈尔抿着嘴，患有轻度结膜炎的巩膜红肿如血，远远地站在照片中央偏后的阴影里。他是我们之中年纪最大的人，曾在阿什科工学院的电气工程学任职副教授。某晚，因补给品中的劣酒酩酊大醉，他兴致勃勃向众人讲述自己未竟的研究：一部声称足以改写审讯历史的精密机器、一个协助他测试仪器的神秘访客以及一场混乱诡谲、宛如杜撰的未遂谋杀。我们谁都没信，认为那只是酒后胡言，即便其中有不少耐人寻味的细节。轰炸发生前，他离开驻地去镇上的邮局送信，联络从此中断，我再没收到他的消息。</p>
 <p>&emsp;&emsp;镜头中央稍近的位置，是我。发尾卷曲，神情阴郁。一顶大得离奇的毡帽盖着上半张脸，但仍能从下撇的嘴角看出若有所思之意，我当时大概已对所谓“明天”失去了耐心。那时我常将自嘲的话挂在嘴边：“他们说这里需要算账，我就来了——其实我本想当个数学家。”</p>
 <p>&emsp;&emsp;人群最右边，后排角落里站着尤西——尤西利卡·维利茨·埃索里耶，我唯一知道全名的人。整整矮了其他人一个头，扛着狙击枪，在镜头前摆出一副扮鬼脸似的嘲弄表情。两侧面颊略显消瘦，或许是因为营养不良。浅亚麻色的发梢在午后日光下像几簇杂草，色泽暗淡。那副设计明显受飞行员风格影响的护目镜松垮挂在耳旁，据说用于矫正那双严重远视的眼睛。尤西干过很多工作，从清理铁路电塔上的鸟巢到修理雪地履带车，应有尽有，如今，则与我们一道迷失在战火混沌的漩涡之中。</p>
 <p>&emsp;&emsp;我们谁都没能逃离。<br><br><br><br>&emsp;&emsp;我时而幻想：一个寒夜后再度醒来时，我将身处<i>理应身处之地</i>。我不该在此处。十九岁的我本应在大学的某间教室将这本书拾起，而不是在硝烟与泥泞中挣扎，像条垂死的鬣狗。</p>
@@ -203,11 +285,6 @@
         <footer>
     <p>&copy;2024 Kuresaka<br>
         无特殊注明，本站内容均为虚构，推荐使用PC端访问
-    </p>
-    <p>
-        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>,
-        <a target="_blank" rel="noopener" href="https://github.com/sunnybyeon/hexo-theme-dashed">Theme</a> by
-        <a target="_blank" rel="noopener" href="https://github.com/sunnybyeon">sunnybyeon</a>
     </p>
 </footer>
 

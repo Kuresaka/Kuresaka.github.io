@@ -15,7 +15,7 @@ body > header ul {
   overflow: auto;
 }
 body > header ul li {
-  with: min-content;
+  width: max-content;
 }
 body > header ul li a {
   text-decoration: none;

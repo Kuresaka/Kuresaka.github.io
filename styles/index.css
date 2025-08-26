@@ -8,6 +8,7 @@ img {
 .theme-list li a {
   font-size: 14px;
 }
-.hover-image {
-  cursor: pointer;
+.custom-cursor:hover {
+/* url('图像路径') x y, 备用光标 */
+  cursor: url("/images/cursor.png") 16 16, pointer;
 }

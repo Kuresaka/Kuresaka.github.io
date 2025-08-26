@@ -31,9 +31,91 @@
 
 
 <meta name="robots" content="noindex, nofollow, noarchive">
-<body oncontextmenu="return false;" onkeypress="return false;" onkeydown="return false;"></body>
-<title>关于—— - KØKU - conceptual vøid</title>
+<body oncontextmenu="return false;" onkeypress="return false;" onkeydown="return false;" ondragstart="return false;"></body>
 
+<script>
+        // 禁止右键菜单
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            showAlert('右键菜单已被禁用');
+        });
+ 
+        // 禁止F12开发者工具
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.key === 'F12') {
+                e.preventDefault();
+                showAlert('F12开发者工具已被禁用');
+            }
+            // Ctrl+U
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+                showAlert('Ctrl+U查看源代码已被禁用');
+            }
+            // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.key === 'i') {
+                e.preventDefault();
+                showAlert('Ctrl+Shift+I开发者工具已被禁用');
+            }
+            // Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && e.key === 'c') {
+                e.preventDefault();
+                showAlert('Ctrl+Shift+C元素选择器已被禁用');
+            }
+        });
+ 
+        // 监测开发者工具是否打开（通过监测窗口尺寸变化）
+        let devtoolsOpen = false;
+        let lastInnerWidth = window.innerWidth;
+        let lastInnerHeight = window.innerHeight;
+ 
+        setInterval(function() {
+            if (
+                (window.innerWidth !== lastInnerWidth && Math.abs(window.innerWidth - lastInnerWidth) > 100) ||
+                (window.innerHeight !== lastInnerHeight && Math.abs(window.innerHeight - lastInnerHeight) > 100)
+            ) {
+                devtoolsOpen = true;
+                showAlert('检测到开发者工具已打开');
+                document.body.innerHTML = '<div class="fixed inset-0 bg-dark flex items-center justify-center text-white text-xl font-bold">检测到开发者工具已打开，请关闭后继续访问。</div>';
+            }
+            lastInnerWidth = window.innerWidth;
+            lastInnerHeight = window.innerHeight;
+        }, 1000);
+ 
+        // 测试按钮功能
+        document.getElementById('testButton').addEventListener('click', function() {
+            document.getElementById('testResult').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('testResult').classList.add('hidden');
+            }, 3000);
+        });
+ 
+        // 显示警告提示
+        function showAlert(message) {
+            // 创建提示元素
+            const alertBox = document.createElement('div');
+            alertBox.className = 'fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-md shadow-lg z-50 transform transition-all duration-300 opacity-0 translate-y-[-20px]';
+            alertBox.textContent = message;
+            
+            // 添加到页面
+            document.body.appendChild(alertBox);
+            
+            // 显示动画
+            setTimeout(() => {
+                alertBox.classList.remove('opacity-0', 'translate-y-[-20px]');
+            }, 10);
+            
+            // 3秒后隐藏
+            setTimeout(() => {
+                alertBox.classList.add('opacity-0', 'translate-y-[-20px]');
+                setTimeout(() => {
+                    document.body.removeChild(alertBox);
+                }, 300);
+            }, 2000);
+        }
+    </script>
+
+<title>关于—— - KØKU - conceptual vøid</title>
 <style>
     body {
       background-image: url('/images/background.gif');
@@ -96,7 +178,7 @@
 <br>
 常用署名是暮坂。
 
-<p>就像面对全新账号我不知该在简介填写什么，以这样一个单独页面来介绍自己对我来说是相当困难的事。<br>网路展现的仅是多个侧面的其中之一，同样简易的标签也无法概括记录于笔下的角色（或者说，存在于某处的人）。<br>这些角色诞生自精神层面的某一情景、某一隐喻、某一状态，然而之后便已不再受控，而是按照TA们自身的意志继续行动前行，走向自己的道路。</p>
+<p>就像面对全新账号我不知该在简介填写什么，以这样一个单独页面来介绍自己对我来说是相当困难的事。<br>网路展现的仅是多个侧面的其中之一，同样简易的标签也无法概括记录于笔下的角色（或者说，存在于某处的人）。<br><a href="/character/">这些角色</a>诞生自精神层面的某一情景、某一隐喻、某一状态，然而之后便已不再受控，而是按照TA们自身的意志继续行动前行，走向自己的道路。</p>
 <p>是了，因而此处的我只是一个无关紧要的旁观者。<br>读者你所见的<em>我</em>只是记录，仅此而已。</p>
 <div style="font-size: 12px; color: grey;">顺带一提，旁边这位是某种意义上的看板暨管理员 ☞
 <p></p>
@@ -106,6 +188,7 @@
     <summary style="font-size: 12px; color: grey;">更新记录</summary>
         <div style="font-size: 12px; color: grey;" class="text-hover">
         <p>
+            • 2025-08-26：页面微调+增设<a href="/character/">角色定义页</a>。<br>
             • 2025-04-03：建站一周年。<br>
             • 2024-12-15：增加神秘隐藏页面。<span style="color: hsl(0, 0%, 80%);" class="blurred">「去远方的荒原看看吧。」</span><br>
             • 2024-12-02：细微页面调整。<br>
@@ -119,8 +202,9 @@
 </details>
 <br><br>
 <p style="font-size: 14px;">
-    <a target="_blank" rel="noopener" href="https://x.com/DOR_KRSK">TWITTER</a>│<a target="_blank" rel="noopener" href="https://www.pixiv.net/users/5468835">PIXIV</a>│<a target="_blank" rel="noopener" href="https://box.n3ko.cc/_/Kuresaka">BOX</a>│本站<a href="/tags/OC/">原创文章</a>遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0协议</a>
-
+    <a target="_blank" rel="noopener" href="https://x.com/DOR_KRSK">TWITTER</a>│<a target="_blank" rel="noopener" href="https://www.pixiv.net/users/5468835">PIXIV</a>│<a target="_blank" rel="noopener" href="https://box.n3ko.cc/_/Kuresaka">BOX</a>│本站<a href="/tags/OC/">原创文章</a>遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0协议</a>│
+    Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>, <a target="_blank" rel="noopener" href="https://github.com/sunnybyeon/hexo-theme-dashed">Theme</a> by
+    <a target="_blank" rel="noopener" href="https://github.com/sunnybyeon">sunnybyeon</a>
 </p>
 
 <hr>
@@ -132,11 +216,6 @@
         <footer>
     <p>&copy;2024 Kuresaka<br>
         无特殊注明，本站内容均为虚构，推荐使用PC端访问
-    </p>
-    <p>
-        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>,
-        <a target="_blank" rel="noopener" href="https://github.com/sunnybyeon/hexo-theme-dashed">Theme</a> by
-        <a target="_blank" rel="noopener" href="https://github.com/sunnybyeon">sunnybyeon</a>
     </p>
 </footer>
 
