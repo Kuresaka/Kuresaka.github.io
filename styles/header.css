@@ -16,6 +16,7 @@ body > header ul {
 }
 body > header ul li {
   width: max-content;
+  padding: 0;
 }
 body > header ul li a {
   text-decoration: none;
