@@ -1,12 +1,13 @@
 body {
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
 }
 img {
   width: 100%;
   display: block;
 }
 .theme-list li a {
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 .custom-cursor:hover {
 /* url('图像路径') x y, 备用光标 */
