@@ -15,8 +15,8 @@ body > header ul {
   overflow: auto;
 }
 body > header ul li {
-  width: max-content;
-  padding: 0;
+  flex: 0 0 auto;
+  white-space: nowarp;
 }
 body > header ul li a {
   text-decoration: none;
