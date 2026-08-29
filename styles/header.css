@@ -14,12 +14,11 @@ body > header ul {
   gap: 1rem;
   overflow: auto;
   scrollbar-width: none;
-  white-space: nowarp;
-  overflow-x: hidden;
+  white-space: nowrap;
 }
 body > header ul li {
   flex: 0 0 auto;
-  white-space: nowarp;
+  white-space: nowrap;
 }
 body > header ul li a {
   text-decoration: none;
