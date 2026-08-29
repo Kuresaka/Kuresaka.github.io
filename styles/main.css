@@ -17,8 +17,9 @@ body > header ul {
   white-space: nowarp;
 }
 body > header ul li {
-  flex: 0 0 auto;
+  width: max-content;
   white-space: nowarp;
+  overflow: auto;
 }
 body > header ul li a {
   text-decoration: none;
