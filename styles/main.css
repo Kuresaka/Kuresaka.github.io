@@ -15,11 +15,11 @@ body > header ul {
   overflow: auto;
   scrollbar-width: none;
   white-space: nowarp;
+  overflow-x: hidden;
 }
 body > header ul li {
-  width: max-content;
+  flex: 0 0 auto;
   white-space: nowarp;
-  overflow: auto;
 }
 body > header ul li a {
   text-decoration: none;
