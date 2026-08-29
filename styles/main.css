@@ -1,7 +1,9 @@
 body > header {
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1rem;
   border-bottom: 1px solid #737373;
+  font-family: "Noto Serif", "Noto Serif SC", serif;
 }
 body > header ul {
   padding: 0;
@@ -170,11 +172,13 @@ body {
   height: 100%;
   overflow: visible;
   font-family: "Noto Serif", serif;
+  font-size: 0.9rem;
 }
 h1 {
   margin: 1rem 0 0.5rem;
   font-size: 1.5rem;
   color: #ac3939;
+  font-family: "Noto Serif", "Noto Serif SC", serif;
 }
 h2 {
   font-size: 1.25rem;

@@ -1,7 +1,9 @@
 body > header {
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1rem;
   border-bottom: 1px solid slightly-light-color;
+  font-family: "Noto Serif", "Noto Serif SC", serif;
 }
 body > header ul {
   padding: 0;
