@@ -7,7 +7,7 @@ img {
   display: block;
 }
 .theme-list li a {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .custom-cursor:hover {
 /* url('图像路径') x y, 备用光标 */
