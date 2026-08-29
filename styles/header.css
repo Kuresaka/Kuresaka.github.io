@@ -17,6 +17,7 @@ body > header ul {
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
+  scrollbar-color: transparent transparent;
   white-space: nowrap;
 }
 body > header ul li {

@@ -30,7 +30,7 @@ nav.pagination span.next a::before {
 nav.pagination a {
   color: light-color;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 nav.pagination a::before {
   position: relative;
