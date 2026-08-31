@@ -14,14 +14,12 @@ body > header ul {
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: auto;
   scrollbar-width: none;
   scrollbar-color: transparent transparent;
   white-space: nowrap;
 }
 body > header ul li {
-  flex: 0 0 auto;
   white-space: nowrap;
 }
 body > header ul li a {
