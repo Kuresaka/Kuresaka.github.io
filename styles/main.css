@@ -15,8 +15,6 @@ body > header ul {
   align-items: center;
   gap: 1rem;
   overflow: auto;
-  scrollbar-width: none;
-  scrollbar-color: transparent transparent;
   white-space: nowrap;
 }
 body > header ul li {
@@ -160,7 +158,6 @@ html {
   display: flex;
   padding: 30px 0;
   overflow: auto;
-  font-family: "Noto Serif", "Noto Serif SC", serif;
 }
 body {
   color: #333;
