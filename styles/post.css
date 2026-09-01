@@ -218,6 +218,19 @@ main header div {
 .hover-image:hover {
   content: url("/images/gift.gif"); /* 鼠标悬停时更换的图片 */
 }
+.text-box {
+  border: 1px solid currentColor;
+  padding: 6px 14px;
+  margin: 12px 0;
+  position: relative;
+}
+.text-box::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px dashed #9a9898;
+  pointer-events: none;
+}
 main header div > * {
   margin: 0.1rem 0;
 }

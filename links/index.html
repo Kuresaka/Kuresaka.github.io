@@ -124,20 +124,66 @@
 
 
 <hr>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("random-boxes");
+    const boxes = Array.from(container.children);
+
+    for (let i = boxes.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [boxes[i], boxes[j]] = [boxes[j], boxes[i]];
+    }
+
+    boxes.forEach(box => container.appendChild(box));
+});
+</script>
+
+
+
 <div style="text-align: left;">
     <br>
+    <div style="float: right;">
+        <div style="display: flex; " width="15%">
+        <img src="/images/view.gif" style="display: flex; gap: 10px 10px" width="48px">
+        <img src="/images/curtain.gif" style="display: flex; gap: 10px 10px" width="48px">
+        <img src="/images/shadow.gif" style="display: flex; gap: 10px 10px" width="48px">
+        </div>
+    </div>
     <img src="/images/banner.gif" title="KØKU" style="display: block; text-align: left;" width="300px">
+    <hr style="margin-left: 0;" width="300px">
     <figcaption style="font-size:12px; text-align: left">· <a target="_blank" rel="noopener" href="https://kuresaka.github.io/images/banner.gif">本图像</a>为个人网站banner<br>
     · 如需交换链接，请联系：<a href="Mailto:RAKUENEND@proton.me">RAKUENEND@proton.me</a></figcaption>
-    <hr style="margin-left: 0;" width="300px">
-    <p style="font-size:16px; color: grey;"><b>│<a target="_blank" rel="noopener" href="https://etongsland.com">ETongsland</a></b></p>
-    <p style="font-size:16px; color: grey;"><b>│<a target="_blank" rel="noopener" href="https://paracosm.pages.dev">the Crossroads</a></b></p>
-    <p style="font-size:16px; color: grey;"><b>│<a target="_blank" rel="noopener" href="https://re.unseen-chamber.icu">this terrible chamber</a></b></p>
-    <p style="font-size:16px; color: grey;"><b>│<a target="_blank" rel="noopener" href="https://babel.unseen-chamber.icu">Perceptual Babel</a></b></p>
-    <p style="font-size:16px; color: grey;"><b>│<a target="_blank" rel="noopener" href="https://furouto.flowus.cn">浮 浪 都</a></b></p>
-
 </div>
-<br><br>
+
+<hr>
+<br>
+<div id="random-boxes">
+<div class="text-box">
+    <p style="font-size:16px; color: grey;" class="text-hover"><b>│<a target="_blank" rel="noopener" href="https://etongsland.com">ETongsland</a></b>
+    <small><span class="blurred">  //etongsland.com// </span></small>
+    </p>  
+</div>
+
+<div class="text-box">
+    <p style="font-size:16px; color: grey;" class="text-hover"><b>│<a target="_blank" rel="noopener" href="https://paracosm.pages.dev">the Crossroads</a></b>
+    <small><span class="blurred">  //paracosm.pages.dev// </span></small>
+    </p>   
+</div>
+
+<div class="text-box">
+    <p style="font-size:16px; color: grey;" class="text-hover"><b>│<a target="_blank" rel="noopener" href="https://babel.unseen-chamber.icu">Perceptual Babel</a></b>
+    <small><span class="blurred">  //babel.unseen-chamber.icu// </span></small>
+    </p>
+</div>
+
+<div class="text-box">
+    <p style="font-size:16px; color: grey;" class="text-hover"><b>│<a target="_blank" rel="noopener" href="https://furouto.flowus.cn">浮 浪 都</a></b>
+    <small><span class="blurred">  //furouto.flowus.cn// </span></small>
+    </p>
+</div>
+</div>
+
+<p><br><br></p>
 <div style="text-align: left;">
 <details>
     <summary style="font-size: 12px; color: hsl(0, 0%, 80%);">这是什么？</summary>
