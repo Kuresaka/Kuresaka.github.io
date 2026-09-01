@@ -231,3 +231,9 @@ main header div {
   border: 1px dashed #9a9898;
   pointer-events: none;
 }
+/* Alignment */
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: auto;
+}
