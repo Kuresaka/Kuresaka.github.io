@@ -210,14 +210,6 @@ main header div {
 .text-hover:hover .blurred {
   opacity: 1; /* 鼠标悬停时，透明度变为1，显示清晰文字 */
 }
-.hover-image {
-  width: 300px; /* 根据需要调整 */
-  height: auto; /* 保持图片比例 */
-  transition: opacity 1s ease; /* 添加平滑过渡效果 */
-}
-.hover-image:hover {
-  content: url("/images/gift.gif"); /* 鼠标悬停时更换的图片 */
-}
 .text-box {
   border: 1px solid currentColor;
   padding: 6px 14px;
@@ -258,30 +250,40 @@ main header div div.post-tags {
 .tooltip {
   position: relative;
   display: inline;
-  cursor: help;
   color: #ac3939;
+  cursor: help;
 }
 .tooltip .tooltiptext {
   visibility: hidden;
   opacity: 0;
   position: absolute;
   z-index: 10;
-  top: calc(100% + 6px);
-  left: 0;
-  width: 280px;
-  max-width: 80vw;
-  padding: 8px 10px;
-  background: #f2f2f2;
-  color: #333;
-  border: 1px solid #b3b3b3;
-  box-shadow: 2px 2px 0 #bfbfbf;
-  font-size: 12px;
-  line-height: 1.6;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 300px;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  background-color: #262626;
+  color: #ebebeb;
   text-align: left;
-  visibility: hidden;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 4px;
   opacity: 0;
   transition: opacity 0.15s ease;
   pointer-events: none;
+}
+@media (max-width: 600px) {
+  .tooltip .tooltiptext {
+    position: fixed;
+    left: 10vw;
+    right: 10vw;
+    width: auto;
+    max-width: none;
+    transform: none;
+  }
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
