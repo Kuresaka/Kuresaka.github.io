@@ -300,3 +300,13 @@ main header div div.post-tags {
 .text-hover:hover .blurred {
   opacity: 1; /* 鼠标悬停时，透明度变为1，显示清晰文字 */
 }
+.swap-word {
+  position: relative;
+}
+.swap-word:hover {
+  font-size: 0;
+}
+.swap-word:hover::after {
+  content: attr(data-hover);
+  font-size: 0.9rem;
+}
